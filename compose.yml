@@ -2,7 +2,7 @@
 services:
   db:
     container_name: db
-    build: ./database/
+    image: nikhilesht19/databaseimage:v1
     ports:
       - "3306:3306"
     volumes:
@@ -20,7 +20,7 @@ services:
 
   auth_service:
     container_name: auth_service
-    build: ./auth/
+    image: nikhilesht19/authimage:v1
     ports:
       - "5001:5001"
     networks:
@@ -35,7 +35,7 @@ services:
           memory: 200M
   book_service:
     container_name: book_service
-    build: ./book/
+    image: nikhilesht19/bookimage:v1
     ports:
       - "5002:5002"
     networks:
@@ -50,7 +50,7 @@ services:
           memory: 200M
   borrow_service:
     container_name: borrow_service
-    build: ./borrow/
+    image: nikhilesht19/borrowimage:v1
     ports:
       - "5003:5003"
     networks:
@@ -65,7 +65,7 @@ services:
           memory: 200M
   frontend:
     container_name: frontend
-    build: ./
+    image: nikhilesht19/frontendimage:v1
     ports:
       - "5000:5000"
     networks:
